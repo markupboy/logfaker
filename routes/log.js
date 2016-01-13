@@ -8,8 +8,7 @@ router.get('/', cors(), function(req, res, next) {
   var log = store.log || "";
   var status = store.status || 'unavailable';
   var offset = parseInt(req.query['offset'], 10) || 0;
-  var limit = req.query['limit'];
-  var part = log.slice(offset, limit);
+  var part = log.slice(offset);
 
   switch(status) {
     case "unavailable":
@@ -17,9 +16,11 @@ router.get('/', cors(), function(req, res, next) {
       break;
 
     case "finished":
+      res.set('X-Logstream-End', 1);
+
     case "streaming":
       res.status(200).json({
-        offset: part.length,
+        offset: offset + part.length,
         limit: 262144,
         size: part.length,
         data: part

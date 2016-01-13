@@ -1,0 +1,196 @@
+---- Started new build at 2014-12-04 20:20:39.070537355 +0000 UTC ----
+[1;32mamazon-ebs output will be in this color.[0m
+
+[1;32m==&gt; amazon-ebs: Inspecting the source AMI...[0m
+[1;32m==&gt; amazon-ebs: Creating temporary keypair: packer 5480c219-fd1b-f7d7-56fa-8d54564c91aa[0m
+[1;32m==&gt; amazon-ebs: Creating temporary security group for this instance...[0m
+[1;32m==&gt; amazon-ebs: Authorizing SSH access on the temporary security group...[0m
+[1;32m==&gt; amazon-ebs: Launching a source AWS instance...[0m
+[0;32m    amazon-ebs: Instance ID: i-e5834d0c[0m
+[1;32m==&gt; amazon-ebs: Waiting for instance (i-e5834d0c) to become ready...[0m
+[1;32m==&gt; amazon-ebs: Waiting for SSH to become available...[0m
+[1;32m==&gt; amazon-ebs: Connected to SSH![0m
+[1;32m==&gt; amazon-ebs: Provisioning with shell script: /tmp/packer-shell127561913[0m
+[0;32m    amazon-ebs: --2014-12-04 20:21:23--  https://raw.github.com/hashicorp/puppet-bootstrap/master/ubuntu.sh[0m
+[0;32m    amazon-ebs: Resolving raw.github.com (raw.github.com)... 23.235.46.133[0m
+[0;32m    amazon-ebs: Connecting to raw.github.com (raw.github.com)|23.235.46.133|:443... connected.[0m
+[0;32m    amazon-ebs: HTTP request sent, awaiting response... 301 Moved Permanently[0m
+[0;32m    amazon-ebs: Location: https://raw.githubusercontent.com/hashicorp/puppet-bootstrap/master/ubuntu.sh [following][0m
+[0;32m    amazon-ebs: --2014-12-04 20:21:23--  https://raw.githubusercontent.com/hashicorp/puppet-bootstrap/master/ubuntu.sh[0m
+[0;32m    amazon-ebs: Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 23.235.46.133[0m
+[0;32m    amazon-ebs: Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|23.235.46.133|:443... connected.[0m
+[0;32m    amazon-ebs: HTTP request sent, awaiting response... 200 OK[0m
+[0;32m    amazon-ebs: Length: 1503 (1.5K) [text/plain][0m
+[0;32m    amazon-ebs: Saving to: `STDOUT&#39;[0m
+[0;32m    amazon-ebs:[0m
+[0;32m    amazon-ebs: 100% 1,503       --.-K/s   in 0s[0m
+[0;32m    amazon-ebs:[0m
+[0;32m    amazon-ebs: 2014-12-04 20:21:23 (49.4 MB/s) - written to stdout [1503/1503][0m
+[0;32m    amazon-ebs:[0m
+[0;32m    amazon-ebs: Initial apt-get update...[0m
+[0;32m    amazon-ebs: W: GPG error: http://archive.ubuntu.com precise Release: Unknown error executing gpgv[0m
+[0;32m    amazon-ebs: Installing wget...[0m
+[0;32m    amazon-ebs: Configuring PuppetLabs repo...[0m
+[0;32m    amazon-ebs: Installing Puppet...[0m
+[0;32m    amazon-ebs: Puppet installed![0m
+[0;32m    amazon-ebs: Installing RubyGems...[0m
+[0;32m    amazon-ebs: Fetching: rubygems-update-2.4.5.gem (100%)[0m
+[0;32m    amazon-ebs: Successfully installed rubygems-update-2.4.5[0m
+[0;32m    amazon-ebs: 1 gem installed[0m
+[0;32m    amazon-ebs: /usr/lib/ruby/1.8/rdoc/rdoc.rb:280: warning: conflicting chdir during another chdir block[0m
+[0;32m    amazon-ebs: /usr/lib/ruby/1.8/rdoc/rdoc.rb:287: warning: conflicting chdir during another chdir block[0m
+[1;32m==&gt; amazon-ebs: Uploading puppet/hiera =&gt; /tmp[0m
+[1;32m==&gt; amazon-ebs: Provisioning with Puppet...[0m
+[0;32m    amazon-ebs: Creating Puppet staging directory...[0m
+[0;32m    amazon-ebs: Uploading hiera configuration...[0m
+[0;32m    amazon-ebs: Uploading local modules from: puppet/modules[0m
+[0;32m    amazon-ebs:[0m
+[0;32m    amazon-ebs:[0m
+[0;32m    amazon-ebs:[0m
+[0;32m    amazon-ebs:[0m
+[0;32m    amazon-ebs:[0m
+[0;32m    amazon-ebs:[0m
+[0;32m    amazon-ebs:[0m
+[0;32m    amazon-ebs: Uploading manifests...[0m
+[0;32m    amazon-ebs: Running Puppet: FACTER_hc_env=&#39;production&#39; FACTER_hc_role=&#39;packer-build-manager&#39; FACTER_hc_datacenter=&#39;east-aws&#39;  sudo -E puppet apply --verbose --modulepath=&#39;/tmp/packer-puppet-masterless/module-0&#39; --hiera_config=&#39;/tmp/packer-puppet-masterless/hiera.yaml&#39; --detailed-exitcodes /tmp/packer-puppet-masterless/manifests/site.pp[0m
+[0;32m    amazon-ebs: [1;31mWarning: Setting templatedir is deprecated. See http://links.puppetlabs.com/env-settings-deprecations[0m
+[0;32m    amazon-ebs: (at /usr/lib/ruby/vendor_ruby/puppet/settings.rb:1139:in `issue_deprecation_warning&#39;)[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Loading facts[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Loading facts[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Loading facts[0m[0m
+[0;32m    amazon-ebs: [mNotice: Compiled catalog for ip-10-144-97-152.ec2.internal in environment production in 0.91 seconds[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Applying configuration version &#39;1417724596&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[prepare]/Hashicorp::Common::Hostname/Package[python-jinja2]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[prepare]/Hashicorp::Stage::Prepare/Exec[hc-apt-update]/returns: executed successfully[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[prepare]/Hashicorp::Common::Hostname/File[/usr/local/bin/hostname_node.sh]/ensure: defined content as &#39;{md5}4dbb72c9c862a312be732f5ebe57576f&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[prepare]/Hashicorp::Common::Hostname/Exec[hc_hostname_set_initial]/returns: executed successfully[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[prepare]/Hashicorp::Common::Hostname/Upstart[hc_hostname_set]/File[/etc/init/hc_hostname_set.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[prepare]/Hashicorp::Common::Hostname/File[/usr/local/bin/hostname_template]/ensure: defined content as &#39;{md5}532a7f272709005c1ee3d834b5bf6af9&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common/Package[htop]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Consul/File[/etc/consul.d]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Consul/Wget::Fetch[consul]/Exec[wget-consul]/returns: executed successfully[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Wget::Fetch[consul]: Scheduling refresh of Exec[unzip-consul][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Consul::Template/File[/usr/local/bin/install_consul_template]/ensure: defined content as &#39;{md5}790c7db2863f23809b8e497b26749369&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Nagios::Plugin_setup/Package[nagios-plugins-basic]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Nagios::Plugin_setup/Package[libjson-perl]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Nagios::Plugin_setup/Package[libnagios-plugin-perl]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Nagios::Plugin_setup/Package[nagios-plugins-extra]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Ntp/File[/etc/ntp.conf]/ensure: defined content as &#39;{md5}ca4a9b3bd26a97030b17a5196722b316&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Ntp/File[/etc/ntp.conf]: Scheduling refresh of Service[ntp][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Ntp/Package[ntp]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common/File[pam_limits]/ensure: defined content as &#39;{md5}b6068561c3ed5f7420b29a33983e8b68&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common/File[pam_limits]: Scheduling refresh of Exec[/usr/sbin/pam-auth-update --package][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Dnsmasq/File[/etc/dnsmasq.hosts.d]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Dnsmasq/File[/etc/dnsmasq.hosts.d]: Scheduling refresh of Service[dnsmasq][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Dnsmasq/Package[dnsmasq]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Package[dnsmasq]: Scheduling refresh of Exec[dnsmasq-initial-stop][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Dnsmasq/Dnsmasq::Conf[hosts]/File[/etc/dnsmasq.d/hosts]/ensure: defined content as &#39;{md5}30ef1070f3dd2fa8f51c9358126c5459&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Dnsmasq/Dnsmasq::Conf[hosts]/File[/etc/dnsmasq.d/hosts]: Scheduling refresh of Service[dnsmasq][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Dnsmasq/Exec[dnsmasq-initial-stop]: Triggered &#39;refresh&#39; from 1 events[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Consul::Template/Exec[install-consul-template]/returns: executed successfully[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common/Exec[/usr/sbin/pam-auth-update --package]: Triggered &#39;refresh&#39; from 1 events[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Role::Packer_build_manager/Hashicorp::Go_service[packer-build-manager]/File[/usr/local/etc/packer-build-manager.conf.template]/ensure: defined content as &#39;{md5}dcad88d973e95dde106e350866018193&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Computing checksum on file /etc/sudoers[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Sudo::Setup/File[/etc/sudoers]: Filebucketed /etc/sudoers to puppet with sum 1b00ee0a97a1bcf9961e476140e2c5c1[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Sudo::Setup/File[/etc/sudoers]/content: content changed &#39;{md5}1b00ee0a97a1bcf9961e476140e2c5c1&#39; to &#39;{md5}539ae9ae4a92767a9f4e73bf096e6dd9&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Nagios::Plugin_setup/Package[nagios-plugins-standard]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common/File[/etc/security/limits.d/nofile.conf]/ensure: defined content as &#39;{md5}dc0533b1871da9a5467c2db5cf79dff8&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Role::Packer_build_manager/Logrotate::File[packer-build-manager]/File[/etc/logrotate.d/packer-build-manager]/ensure: defined content as &#39;{md5}5e63189b74b7206d5a63c7ca7b00dbb4&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Nagios::Plugin_setup/Package[nagios-plugins]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Go_service::Setup/Package[s3cmd]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Go_service::Setup/File[/usr/local/bin/go_service_download.sh]/ensure: defined content as &#39;{md5}0a34c2de9e098fa41e420ad704b4cd29&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Role::Packer_build_manager/Hashicorp::Go_service[packer-build-manager]/Go_service[packer-build-manager]/Exec[go-service-packer-build-manager]/returns: executed successfully[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Ntp/Service[ntp]: Triggered &#39;refresh&#39; from 1 events[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Zip/Package[unzip]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Consul/Exec[unzip-consul]: Triggered &#39;refresh&#39; from 1 events[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Consul_agent/Util::Recursive_directory[join-service-dir]/Exec[join-service-dir]/returns: executed successfully[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Consul_agent/Util::Recursive_directory[/var/lib/consul]/Exec[/var/lib/consul]/returns: executed successfully[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Consul_agent/Logrotate::File[consul]/File[/etc/logrotate.d/consul]/ensure: defined content as &#39;{md5}3605dd4a3f4849ea4536cc3d2c3f611b&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Consul_agent/Dnsmasq::Conf[consul]/File[/etc/dnsmasq.d/consul]/ensure: defined content as &#39;{md5}00bfb3c39a9b0362b60c7b175223095e&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common::Consul_agent/Dnsmasq::Conf[consul]/File[/etc/dnsmasq.d/consul]: Scheduling refresh of Service[dnsmasq][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Nagios::Plugin_setup/Package[libwww-perl]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Role::Packer_build_manager/Consul::Conf[service-packer-build-manger]/File[/etc/consul.d/service-packer-build-manger.json]/ensure: defined content as &#39;{md5}aec7697fe8c54f58aede35555a17be1b&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Consul::Conf[service-packer-build-manger]: Scheduling refresh of Upstart[consul][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common/Consul::Conf[check-disk]/File[/etc/consul.d/check-disk.json]/ensure: defined content as &#39;{md5}fdaed8eb56b2554a360ee50e51086168&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Consul_agent/Consul::Conf[datacenter]/File[/etc/consul.d/datacenter.json]/ensure: defined content as &#39;{md5}1774ded745dbb443184ec0f5f4d6dccb&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Consul::Conf[datacenter]: Scheduling refresh of Upstart[consul][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Apt/Cron[apt-update]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common/Sysctl::Value[swappiness]/File[/etc/sysctl.d/60-swappiness.conf]/ensure: defined content as &#39;{md5}3a3c6a5fd1f42c59fc7310f9d57f3748&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common/Sysctl::Value[swappiness]/File[/etc/sysctl.d/60-swappiness.conf]: Scheduling refresh of Exec[reload-sysctl][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Consul_agent/File[/etc/service/consul-join]/ensure: defined content as &#39;{md5}479e6d7c65ded0038377adec422338ab&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Consul_agent/Upstart[consul-join]/File[/etc/init/consul-join.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Collectd/Logrotate::File[collectd]/File[/etc/logrotate.d/collectd]/ensure: defined content as &#39;{md5}74d03b0d1fab6507d94eb0cd1ec07f19&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common/Sysctl::Value[fd-raise]/File[/etc/sysctl.d/60-fd-raise.conf]/ensure: defined content as &#39;{md5}9058182fb3cda1c6d3138835eca31cac&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common/Sysctl::Value[fd-raise]/File[/etc/sysctl.d/60-fd-raise.conf]: Scheduling refresh of Exec[reload-sysctl][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Sysctl::Setup/Exec[reload-sysctl]: Triggered &#39;refresh&#39; from 2 events[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd::Install::Ubuntu_12_04/Apt::Key[collectd]/Exec[add-key-collectd]/returns: executed successfully[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd::Install::Ubuntu_12_04/Apt::Repository[collectd]/File[/etc/apt/sources.list.d/collectd-source.list]/ensure: defined content as &#39;{md5}7720b0ebbfb1c61581ab8518438adb88&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Collectd::Install::Ubuntu_12_04/Apt::Repository[collectd]/File[/etc/apt/sources.list.d/collectd-source.list]: Scheduling refresh of Exec[apt-update-collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd::Install::Ubuntu_12_04/Apt::Repository[collectd]/Exec[apt-update-collectd]: Triggered &#39;refresh&#39; from 1 events[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd::Install::Ubuntu_12_04/Package[collectd]/ensure: ensure changed &#39;purged&#39; to &#39;present&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd/File[/var/log/collectd]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd/File[/etc/collectd]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd/File[/etc/collectd/collection.conf]/ensure: defined content as &#39;{md5}4e16a9f727b46bb79ff0bbbfe2389990&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Collectd/File[/etc/collectd/collection.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd/File[/etc/collectd/thresholds.conf]/ensure: defined content as &#39;{md5}bcc4bf1aa4eb6c9877d23ceb758c56d1&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Collectd/File[/etc/collectd/thresholds.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Computing checksum on file /etc/collectd.conf[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Collectd/File[/etc/collectd.conf]: Filebucketed /etc/collectd.conf to puppet with sum ceb6efb06b9d1ff0a98c15d8f46a29e1[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd/File[/etc/collectd.conf]/content: content changed &#39;{md5}ceb6efb06b9d1ff0a98c15d8f46a29e1&#39; to &#39;{md5}5e2fa2a390de71d0cc6691d1ac58a9ae&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Collectd/File[/etc/collectd.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd/File[/etc/collectd/plugins]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[cpu]/File[/etc/collectd/plugins/00-cpu.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[cpu]/File[/etc/collectd/plugins/00-cpu.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[disk]/File[/etc/collectd/plugins/00-disk.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[disk]/File[/etc/collectd/plugins/00-disk.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd/File[/etc/collectd/plugins/dummy.conf]/ensure: defined content as &#39;{md5}bbc0cdb5076a48034f0a016b526d7ea2&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Collectd/File[/etc/collectd/plugins/dummy.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[interface]/File[/etc/collectd/plugins/00-interface.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[interface]/File[/etc/collectd/plugins/00-interface.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd/Collectd::Plugin[logfile]/File[/etc/collectd/plugins/00-logfile.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Collectd/Collectd::Plugin[logfile]/File[/etc/collectd/plugins/00-logfile.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[memory]/File[/etc/collectd/plugins/00-memory.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[memory]/File[/etc/collectd/plugins/00-memory.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[processes]/File[/etc/collectd/plugins/00-processes.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[processes]/File[/etc/collectd/plugins/00-processes.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[load]/File[/etc/collectd/plugins/00-load.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[load]/File[/etc/collectd/plugins/00-load.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd/Collectd::Plugin[logfile]/File[/etc/collectd/plugins/logfile.conf]/ensure: defined content as &#39;{md5}5421044ed415cf8ed6cd61f93cd7d2d1&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Collectd/Collectd::Plugin[logfile]/File[/etc/collectd/plugins/logfile.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Collectd/Cron[restart-collectd]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Computing checksum on file /etc/init/collectd.conf[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common::Collectd/Upstart[collectd]/File[/etc/init/collectd.conf]: Filebucketed /etc/init/collectd.conf to puppet with sum 693c3e23922fa2e8d7911222883a6ea2[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Collectd/Upstart[collectd]/File[/etc/init/collectd.conf]/content: content changed &#39;{md5}693c3e23922fa2e8d7911222883a6ea2&#39; to &#39;{md5}8a73e2a08c02f682d0af4f3ba2bce934&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[write_graphite]/File[/etc/collectd/plugins/00-write_graphite.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[write_graphite]/File[/etc/collectd/plugins/00-write_graphite.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Consul::Conf[check-disk]: Scheduling refresh of Upstart[consul][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Consul_agent/Upstart[consul]/File[/etc/init/consul.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Role::Packer_build_manager/Hashicorp::Go_service[packer-build-manager]/Consul::Template_service[packer-build-manager]/File[/usr/local/etc/consul-template-packer-build-manager.hcl]/ensure: defined content as &#39;{md5}1c208d21c2b85af82dc75dde24e8b806&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Role::Packer_build_manager/Hashicorp::Go_service[packer-build-manager]/Consul::Template_service[packer-build-manager]/Upstart[consul-template-packer-build-manager]/File[/etc/init/consul-template-packer-build-manager.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Role::Packer_build_manager/Hashicorp::Go_service[packer-build-manager]/Consul::Template_service[packer-build-manager]/Logrotate::File[consul-template-packer-build-manager]/File[/etc/logrotate.d/consul-template-packer-build-manager]/ensure: defined content as &#39;{md5}155ae7203031806f09110138f1693814&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Role::Packer_build_manager/Hashicorp::Go_service[packer-build-manager]/Upstart[packer-build-manager]/File[/etc/init/packer-build-manager.conf]/ensure: created[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common/Sudo::Sudoer[ubuntu]/File[/etc/sudoers.d/ubuntu]/ensure: defined content as &#39;{md5}ab2ac5b165864a0205ca3614e7860070&#39;[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[write_graphite]/File[/etc/collectd/plugins/write_graphite.conf]/ensure: defined content as &#39;{md5}abf34da5dd1cb39e3ecc8762af72daec&#39;[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: /Stage[main]/Hashicorp::Common::Collectd/Collectd::Plugin[write_graphite]/File[/etc/collectd/plugins/write_graphite.conf]: Scheduling refresh of Service[collectd][0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Collectd::Install::Ubuntu_12_04/Service[collectd]: Triggered &#39;refresh&#39; from 14 events[0m[0m
+[0;32m    amazon-ebs: [mNotice: /Stage[main]/Dnsmasq/Service[dnsmasq]: Triggered &#39;refresh&#39; from 3 events[0m[0m
+[0;32m    amazon-ebs: [0;32mInfo: Creating state file /var/lib/puppet/state/state.yaml[0m[0m
+[0;32m    amazon-ebs: [mNotice: Finished catalog run in 135.74 seconds[0m[0m
+[1;32m==&gt; amazon-ebs: Stopping the source instance...[0m
+[1;32m==&gt; amazon-ebs: Waiting for the instance to stop...[0m
+[1;32m==&gt; amazon-ebs: Creating the AMI: packer-build-manager 1417724441[0m
+[0;32m    amazon-ebs: AMI: ami-b86cf7d0[0m
+[1;32m==&gt; amazon-ebs: Waiting for AMI to become ready...[0m
+[1;32m==&gt; amazon-ebs: Adding tags to AMI (ami-b86cf7d0)...[0m
+[0;32m    amazon-ebs: Adding tag: &#34;Name&#34;: &#34;Packer packer-build-manager&#34;[0m
+[1;32m==&gt; amazon-ebs: Terminating the source AWS instance...[0m
+[1;32m==&gt; amazon-ebs: Deleting temporary security group...[0m
+[1;32m==&gt; amazon-ebs: Deleting temporary keypair...[0m
+[1;32m==&gt; amazon-ebs: Running post-processor: atlas[0m
+[0;32m    amazon-ebs (atlas): Uploading artifact version...[0m
+[1;32mBuild &#39;amazon-ebs&#39; finished.[0m
+
+<computed>
+==&gt; Builds finished. The artifacts of successful builds are:
+--&gt; amazon-ebs: hashicorp/packer-build-manager/amazon.image (v3)
+</computed>

@@ -5,23 +5,42 @@
   Generate fake logs for use in Atlas dev.
 </p>
 
-<form method="post">
-  <div class="form-group">
-    <label for="status">Status</label>
-    <select name="status" id="status" class="form-control">
-      <option value="unavailable" {{#if (eq status 'unavailable')}}selected{{/if}}>Unavailable</option>
-      <option value="streaming" {{#if (eq status 'streaming')}}selected{{/if}}>Streaming</option>
-      <option value="finished" {{#if (eq status 'finished')}}selected{{/if}}>Finished</option>
-      <option value="failed" {{#if (eq status 'failed')}}selected{{/if}}>Failed</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="text">Log Text</label>
-    <textarea id="text" name="text" rows=3 class="form-control" placeholder="Append to log text…"></textarea>
-  </div>
-  <div class="form-group">
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-</form>
+<div class="row">
+  <div class="col-md-8">
+    <form method="post">
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select name="status" id="status" class="form-control">
+          <option value="unavailable" {{#if (eq status 'unavailable')}}selected{{/if}}>Unavailable</option>
+          <option value="streaming" {{#if (eq status 'streaming')}}selected{{/if}}>Streaming</option>
+          <option value="finished" {{#if (eq status 'finished')}}selected{{/if}}>Finished</option>
+          <option value="failed" {{#if (eq status 'failed')}}selected{{/if}}>Failed</option>
+        </select>
+      </div>
 
-<pre>{{logText}}</pre>
+      <div class="form-group">
+        <label for="text">Log Text</label>
+        <textarea id="text" name="text" rows=3 class="form-control" placeholder="Append to log text…"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/random" class="btn btn-info">Load Random Block</a>
+        <a href="/clear" class="btn btn-danger">Clear</a>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="col-md-4">
+    <label>
+      Log is {{#if status}}{{status}}{{else}}unavailable{{/if}}
+    </label>
+    {{#if logText}}
+      <pre>{{logText}}</pre>
+    {{/if}}
+    </div>
+  </div>
+
+
+
+</div>
