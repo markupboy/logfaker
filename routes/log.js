@@ -7,8 +7,19 @@ router.get('/', cors(), function(req, res, next) {
   var store = global.log;
   var log = store.log || "";
   var status = store.status || 'unavailable';
-  var offset = parseInt(req.query['offset'], 10) || 0;
-  var part = log.slice(offset);
+  var tail = req.query['tail'] && parseInt(req.query['tail'], 10);
+
+  if(tail) {
+    var limit = tail;
+    var offset = log.length - limit;
+    var part = log.slice(-1 * limit);
+  } else {
+    var offset = parseInt(req.query['offset'], 10) || 0;
+    var limit = parseInt(req.query['limit'], 10) || 262144;
+    var part = log.slice(offset, offset + limit);
+  }
+
+  var size = part.length;
 
   switch(status) {
     case "unavailable":
@@ -20,11 +31,12 @@ router.get('/', cors(), function(req, res, next) {
 
     case "streaming":
       res.status(200).json({
-        offset: offset + part.length,
-        limit: 262144,
-        size: part.length,
+        offset: offset + size,
+        limit: limit,
+        size: size,
         data: part
       });
+
       break;
 
     case "failed":
